@@ -132,4 +132,133 @@ scoreDolphins = calcAverage(85, 54, 41);
 scoreKoalas = calcAverage(23, 34, 27);
 console.log(scoreDolphins, scoreKoalas);
 checkWinner(scoreDolphins, scoreKoalas);
+
+
+//INTRODUCTION TO ARRAYS
+
+const friend1 = "Thomas";
+const friend2 = "Billions";
+const friend3 = "Legacy";
+console.log(friend1);
+
+const friends = ["Thomas", "Billions", "Legacy"];
+console.log(friends);
+
+const y = new Array(1996, 1997, 1998, 1999);
+
+console.log(friends[2]);
+
+console.log(friends.length);
+console.log(friends[friends.length - 1]);
+
+friends[2] = "Lengendary";
+console.log(friends);
+//friends =['Bob', 'Alice'];
+
+const firstName = "Thomas";
+const Thomas = [firstName, "Gakumu", 2026 - 1996, "Enterpreneur", "Father"];
+console.log(Thomas);
+
+//Exercise
+const calcAge = function (birthYear) {
+  return 2026 - birthYear;
+};
+const years = [1996, 1997, 1998, 1999];
+
+const age1 = calcAge(years[0]);
+const age2 = calcAge(years[1]);
+const age3 = calcAge(years[2]);
+
+console.log(age1, age2, age3);
+
+
+
+//ADD ELEMENTS
+const friends = ["Thomas", "Billions", "Legacy"];
+const newLength = friends.push("Hov"); //Add last element
+//console.log(friends);
+console.log(newLength);
+
+friends.unshift("Maina"); //Add first element
+console.log(friends);
+
+//REMOVE ELEMENTS
+friends.pop(); // Last element
+const popped = friends.pop();
+console.log(popped);
+console.log(friends);
+
+friends.shift(); //First element
+console.log(friends);
+
+console.log(friends.indexOf("Thomas"));
+console.log(friends.indexOf("Bob")); // -1 cause Bob is not available
+
+friends.push(23);
+console.log(friends.includes("Steven"));
+console.log(friends.includes("Thomas"));
+
+if (friends.includes("Thomas")) {
+  console.log("You have a friend called Thomas");
+}
+
+
+//CHALLENGE #2
+
+const calcTip = function (bill) {
+  return bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
+};
+const calcTip2 = (bill) =>
+  bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
+
+const bills = [125, 555, 44];
+const tip = [calcTip2(bills[0]), calcTip2(bills[1]), calcTip(bills[2])];
+const totals = [
+  bills[0] + calcTip2(bills[0]),
+  bills[1] + calcTip2(bills[1]),
+  bills[2] + calcTip(bills[2]),
+];
+
+console.log(tip);
+console.log(totals);
 */
+
+const Thomas = {
+  firstName: "Thomas",
+  lastName: "Maina",
+  age: 2026 - 1996,
+  job: "Enterpreneur",
+  friends: ["Thomas", "Gakumu", "Maina"],
+};
+console.log(Thomas);
+
+console.log(Thomas.lastName);
+console.log(Thomas["lastName"]);
+
+const nameKey = "Name";
+console.log(Thomas["first" + nameKey]);
+console.log(Thomas["last" + nameKey]);
+
+const intrestedIn = prompt(
+  "What do you want to know about Thomas?Choose between firstName,lastName,age,job, and friends",
+);
+
+if (Thomas[intrestedIn]) {
+  console.log(Thomas[intrestedIn]);
+} else {
+  console.log(
+    "Wrong request!Choose between firstName,lastName,age,job, and friends",
+  );
+}
+
+Thomas.location = "Mwihoko";
+Thomas["twitter"] = "@tacticalyunbten";
+
+//console.log(Thomas);
+
+//Challenge
+//"Thomas has 3 friends, and his best friend is called Thomas"
+
+console.log(
+  `${Thomas.firstName} has ${Thomas.friends.length} friends, and his best friend is called ${Thomas.friends[0]}`,
+);
