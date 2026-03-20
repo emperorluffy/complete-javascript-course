@@ -72,7 +72,7 @@ console.log(50 - 19 - 9);
 let x, y;
 x = y = 50 - 30 - 5; // x = y =15
 console.log(x, y);
-*/
+
 
 //CODING CHALLENGE 1
 
@@ -83,3 +83,24 @@ const johnMass = 92;
 const johnHeight = 1.95;
 
 console.log(markMass / markHeight ** 2, johnMass / johnHeight ** 2);
+
+
+const day = "wed";
+
+if (day === "Monday") {
+  console.log("Plan your structure");
+} else if (day === "Tuesday") {
+  console.log("Tuesday");
+} else if (day === "Wednesday" || day === "Thurday") {
+  console.log("Mama your son made it");
+} else {
+  console.log("Haha I did it");
+}
+*/
+
+const age = 19;
+// age >=18? console.log('I like to drink wine') : console.log('I like to drink water');
+
+const drink = age > 18 ? "Wine 🍷" : "Water";
+console.log(drink);
+console.log(`I'd like to drink ${age > 18 ? "Wine 🍷" : "Water 💧"}`);
