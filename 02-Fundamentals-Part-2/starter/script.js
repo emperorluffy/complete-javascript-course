@@ -221,7 +221,7 @@ const totals = [
 
 console.log(tip);
 console.log(totals);
-*/
+
 
 const Thomas = {
   firstName: "Thomas",
@@ -262,3 +262,200 @@ Thomas["twitter"] = "@tacticalyunbten";
 console.log(
   `${Thomas.firstName} has ${Thomas.friends.length} friends, and his best friend is called ${Thomas.friends[0]}`,
 );
+
+
+const Thomas = {
+  firstName: "Thomas",
+  lastName: "Maina",
+  birthYear: 1996,
+  job: "Enterpreneur",
+  friends: ["Thomas", "Gakumu", "Maina"],
+  hasDriversLicense: true,
+
+  // calcAge: function (birthYear) {
+  //   return 2026 - birthYear;
+  // },
+
+  // calcAge: function () {
+  //   return 2026 - this.birthYear;
+  // },
+
+  calcAge: function () {
+    this.age = 2026 - 1997;
+    return this.age;
+  },
+  getSummary: function () {
+    return `${this.firstName} is a ${this.calcAge()}-years old ${this.job},and he has ${this.hasDriversLicense ? "a" : "no"} driver's license.`;
+  },
+};
+
+// const calcAge = function(birthYear){
+//   return 2026 - birthYear;
+// }
+
+console.log(Thomas.calcAge(1996));
+// console.log(Thomas["calcAge"](1996));
+
+console.log(Thomas.age);
+
+//CHALLENGE
+//"Thomas is a 30 year old teacher, and he has a driver's licence"
+
+console.log(Thomas.getSummary());
+
+
+
+//CHALLENGE
+
+const Mark = {
+  firstName: "Mark",
+  lastName: "Miller",
+  mass: 78,
+  height: 1.69,
+
+  //   calcAge: function () {
+  //   this.age = 2026 - 1997;
+  //   return this.age;
+  // }
+
+  calcBMI: function () {
+    this.BMI = this.mass / this.height ** 2;
+    return this.BMI;
+  },
+};
+
+const John = {
+  firstName: "Mark",
+  lastName: "Miller",
+  mass: 92,
+  height: 1.95,
+
+  calcBMI: function () {
+    this.BMI = this.mass / this.height ** 2;
+    return this.BMI;
+  },
+};
+
+Mark.calcBMI();
+John.calcBMI();
+console.log(Mark.BMI);
+console.log(John.BMI);
+
+// "John's BMI (28.3) is higher than Mark's (23.9)!"
+
+if (Mark.BMI > John.BMI) {
+  console.log(
+    `${Mark.firstName}'s BMI (${Mark.BMI}) is higher than ${John.firstName}'s BMI (${John.BMI})`,
+  );
+} else if (John.BMI > Mark.BMI) {
+  console.log(
+    `${John.firstName}'s BMI (${John.BMI}) is higher than ${Mark.firstName}'s BMI (${Mark.BMI})`,
+  );
+}
+
+
+//LOOPS
+
+// console.log("Lifting weight repetition 1 🏋🏽‍♂️");
+// console.log("Lifting weight repetition 2 🏋🏽‍♂️");
+// console.log("Lifting weight repetition 3 🏋🏽‍♂️");
+// console.log("Lifting weight repetition 4 🏋🏽‍♂️");
+// console.log("Lifting weight repetition 5 🏋🏽‍♂️");
+// console.log("Lifting weight repetition 6 🏋🏽‍♂️");
+// console.log("Lifting weight repetition 7 🏋🏽‍♂️");
+// console.log("Lifting weight repetition 8 🏋🏽‍♂️");
+// console.log("Lifting weight repetition 9 🏋🏽‍♂️");
+// console.log("Lifting weight repetition 10 🏋🏽‍♂️");
+
+//FOR LOOPS KEEP RUNNING WHILE CONDITION IS TRUE
+for (let rep = 1; rep <= 10; rep++) {
+  console.log(`Lifting weight repetition ${rep} 🏋🏽‍♂️`);
+}
+
+
+
+
+//While Loop
+// for (let rep = 1; rep <= 10; rep++) {
+//   console.log(`Lifting weight repetition ${rep} 🏋🏽‍♂️`);
+// }
+
+let rep = 1;
+while (rep <= 10) {
+  // console.log(`Lifting weight repetition ${rep} 🏋🏽‍♂️`);
+  rep++;
+}
+
+let dice = Math.trunc(Math.random() * 6 + 1);
+
+while (dice !== 6) {
+  console.log(`You rolled a ${dice}`);
+  dice = Math.trunc(Math.random() * 6) + 1;
+  if (dice === 6) console.log(`Loop is about to end...`);
+}
+
+//Looping Arrays
+const Thomas = [
+  "Thomas",
+  "Maina",
+  2026 - 1996,
+  "Enterpreneur",
+  ["Thomas", "Gakumu", "Maina"],
+  true,
+];
+const types = [];
+
+for (let i = 0; i < Thomas.length; i++) {
+  //Reading from Thomas array
+  console.log(Thomas[i], typeof Thomas[i]);
+
+  //Filling types of array
+  // types[i] = typeof Thomas[i];
+  types.push(typeof Thomas[i]);
+}
+console.log(types);
+
+const years = [1996, 1997, 1998, 1999, 2000];
+const ages = [];
+
+for (let i = 0; i < years.length; i++) {
+  ages.push(2026 - years[i]);
+}
+
+console.log(ages);
+
+//continue and break
+console.log("---Only Strings---");
+for (let i = 0; i < Thomas.length; i++) {
+  if (typeof Thomas[i] !== "string") continue;
+  console.log(Thomas[i], typeof Thomas[i]);
+}
+
+console.log("---Only Numbers---");
+for (let i = 0; i < Thomas.length; i++) {
+  if (typeof Thomas[i] === "number") break;
+  console.log(Thomas[i], typeof Thomas[i]);
+}
+*/
+//Looping Backwards
+const Thomas = [
+  "Thomas",
+  "Maina",
+  2026 - 1996,
+  "Enterpreneur",
+  ["Thomas", "Gakumu", "Maina"],
+];
+//0,1,....4
+//4,3,....0
+
+for (let i = Thomas.length - 1; i >= 0; i--) {
+  console.log(i, Thomas[i]);
+}
+//Loop inside a Loop
+for (let exercise = 1; exercise < 5; exercise++) {
+  console.log(`----Starting exercise ${exercise}`);
+
+  for (let rep = 1; rep < 6; rep++) {
+    console.log(`Lifting weight repetition ${rep} 🏋🏽‍♂️`);
+  }
+}
